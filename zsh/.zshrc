@@ -122,3 +122,11 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.dotfiles/zsh/.p10k.zsh ]] || source ~/.dotfiles/zsh/.p10k.zsh
+
+ZSH_CUSTOM_DIR="$HOME/.dotfiles/zsh"
+if [[ -d "$ZSH_CUSTOM_DIR" ]]; then
+  for file in "$ZSH_CUSTOM_DIR"/*.zsh(N); do
+    [[ -r "$file" ]] && source "$file"
+  done
+fi
+
