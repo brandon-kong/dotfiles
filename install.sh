@@ -6,6 +6,7 @@ DOTFILES_DIR="$HOME/.dotfiles"
 
 # List of dotfiles to symlink: "source:target"
 DOTFILES=(
+  "$DOTFILES_DIR/vim/.vimrc:$HOME/.vimrc"
   "$DOTFILES_DIR/git/.gitconfig:$HOME/.gitconfig"
   "$DOTFILES_DIR/zsh/.zshrc:$HOME/.zshrc"
   "$DOTFILES_DIR/zsh/.p10k.zsh:$HOME/.p10k.zsh"
