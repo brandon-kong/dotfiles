@@ -12,3 +12,5 @@ alias gpo='git push origin'
 alias gb='git branch'
 alias gcl='git clone'
 
+# Neovim Aliases
+alias nv='nvim'
