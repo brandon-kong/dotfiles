@@ -1,0 +1,2 @@
+neomutt/secrets/*
+!neomutt/secrets/.gitkeep
