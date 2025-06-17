@@ -88,7 +88,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,3 +133,9 @@ fi
 
 # Enable Vim mode
 bindkey -v
+
+# Customize VI cursor
+export ZVM_CURSOR_STYLE_ENABLED=true
+export ZVM_VI_INSERT_MODE_CURSOR='beam'
+export ZVM_VI_NORMAL_MODE_CURSOR='block'
+
