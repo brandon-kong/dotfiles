@@ -10,5 +10,4 @@ source ./configs/mappings.rc
 # Accounts
 
 source ./accounts/gmail
-
 source ./accounts/school
