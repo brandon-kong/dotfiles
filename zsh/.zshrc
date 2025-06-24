@@ -139,3 +139,11 @@ export ZVM_CURSOR_STYLE_ENABLED=true
 export ZVM_VI_INSERT_MODE_CURSOR='beam'
 export ZVM_VI_NORMAL_MODE_CURSOR='block'
 
+
+# pnpm
+export PNPM_HOME="/home/brandon/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
