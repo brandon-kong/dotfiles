@@ -7,3 +7,6 @@ discord
 
 # Media
 spotify-launcher
+
+# Misc.
+obsidian

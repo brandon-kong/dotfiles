@@ -16,8 +16,9 @@ cargo
 git
 github-cli
 
-# Terminal emulators
+# Terminal
 alacritty
+tmux
 
 # Language servers
 lua-language-server
