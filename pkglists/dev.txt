@@ -10,10 +10,14 @@ make
 cmake
 clang
 ninja
+cargo
 
 # Dev tools
 git
 github-cli
+
+# Terminal emulators
+alacritty
 
 # Language servers
 lua-language-server
