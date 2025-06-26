@@ -10,6 +10,7 @@ DOTFILES=(
   "$DOTFILES_DIR/git/.gitconfig:$HOME/.gitconfig"
   "$DOTFILES_DIR/zsh/.zshrc:$HOME/.zshrc"
   "$DOTFILES_DIR/zsh/.p10k.zsh:$HOME/.p10k.zsh"
+  "$DOTFILES_DIR/tmux/.tmux.conf:$HOME/.tmux.conf"
 )
 
 echo "Symlinking dotfiles..."
