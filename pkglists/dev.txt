@@ -1,0 +1,22 @@
+# Programming languages and runtimes
+nodejs
+pnpm
+python
+go
+
+# Build tools/compilers
+gcc
+make
+cmake
+clang
+ninja
+
+# Dev tools
+git
+github-cli
+
+# Language servers
+lua-language-server
+
+# Misc.
+ripgrep

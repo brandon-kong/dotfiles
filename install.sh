@@ -31,4 +31,31 @@ for entry in "${DOTFILES[@]}"; do
   echo "✅ Linked $dest → $src"
 done
 
+
+echo "📦 Installing official repo packages..."
+
+LIST_DIR="$HOME/.dotfiles/pkglists/"
+
+for list in "$LIST_DIR"/*.txt; do
+  name=$(basename "$list")
+  if [[ "$name" != aur* ]]; then
+    echo "→ Installing from $name"
+    grep -vE '^\s*#|^\s*$' "$list" | sudo pacman -S --needed --noconfirm -
+  fi
+done
+
+echo "📁 Moving scripts to ~/.local/bin..."
+
+# Ensure destination exists
+mkdir -p "$HOME/.local/bin"
+
+# Move and rename scripts (remove .sh extension)
+for script in "$DOTFILES_DIR/scripts/"*.sh; do
+  base=$(basename "$script" .sh)
+  dest="$HOME/.local/bin/$base"
+  echo "→ Installing $base"
+  cp "$script" "$dest"
+  chmod +x "$dest"
+done
+
 echo "Done! 🎉"

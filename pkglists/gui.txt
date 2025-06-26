@@ -1,0 +1,9 @@
+# Browsers
+firefox
+
+# Communication
+signal-desktop
+discord
+
+# Media
+spotify-launcher
