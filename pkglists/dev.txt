@@ -1,6 +1,7 @@
 # Programming languages and runtimes
 nodejs
 pnpm
+npm
 python
 go
 
