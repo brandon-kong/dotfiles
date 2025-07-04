@@ -1,6 +1,8 @@
 # Enable vim mode
 bindkey -v
 
+export LANG=en_US.UTF-8
+
 ZSH_CACHE_DIR="$HOME/.cache/zsh"
 ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${HOST}"
 export ZSH_COMPDUMP
