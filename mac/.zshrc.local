@@ -1,13 +1,3 @@
-# Use a tidy location for zcompdump
-ZSH_CACHE_DIR="$HOME/.cache/zsh"
-ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${HOST}"
-export ZSH_COMPDUMP
-
-HISTFILE=$HOME/.config/zsh/history
-
-# Ensure that the cache directory exists
-mkdir -p "${ZSH_CACHE_DIR}"
-
 # autoload -Uz compinit
 # compinit -d "$ZSH_COMPDUMP"
 
@@ -20,7 +10,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -134,15 +124,6 @@ if [[ -d "$ZSH_CUSTOM_DIR" ]]; then
   done
 fi
 
-# Enable Vim mode
-bindkey -v
-
-# Customize VI cursor
-export ZVM_CURSOR_STYLE_ENABLED=true
-export ZVM_VI_INSERT_MODE_CURSOR='beam'
-export ZVM_VI_NORMAL_MODE_CURSOR='block'
-
-
 # pnpm
 export PNPM_HOME="/home/brandon/.local/share/pnpm"
 case ":$PATH:" in
@@ -150,6 +131,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# Disable the configuration wizard for POWERLEVEL9K
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true

@@ -1,0 +1,5 @@
+# CLI Tools
+brew "htop"
+brew "neovim"
+brew "ripgrep"
+
