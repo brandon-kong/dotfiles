@@ -10,3 +10,11 @@ brew "pnpm"
 
 # Install fonts
 cask "font-fira-code-nerd-font"
+
+# User Interfaces
+cask "spotify"
+cask "discord"
+cask "firefox"
+cask "obsidian"
+cask "signal"
+cask "aftman"
