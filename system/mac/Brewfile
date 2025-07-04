@@ -7,3 +7,6 @@ brew "gh"
 
 brew "node"
 brew "pnpm"
+
+# Install fonts
+cask "font-fira-code-nerd-font"
