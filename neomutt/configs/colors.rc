@@ -1,4 +1,0 @@
-color index green default ~N # new messages
-color index blue default ~F # flagged messages
-color status yellow default
-color header cyan default
