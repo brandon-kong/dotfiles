@@ -41,3 +41,8 @@ if [[ -d $ZSH_EXTRA_DIR ]]; then
     [[ -r "$file" ]] && source "$file"
   done
 fi
+
+# Node configs
+export NODE_REPL_HISTORY="$HOME/.cache/node/.node_repl_history"
+
+mkdir -p "$(dirname "$NODE_REPL_HISTORY")"
