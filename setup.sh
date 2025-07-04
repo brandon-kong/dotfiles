@@ -1,49 +1,18 @@
-#!/usr/bin/env bash
-
+#!/bin/bash
 set -e
 
-DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# List of dotfiles to symlink: "source:target"
-DOTFILES=(
-  "$DOTFILES_DIR/vim/.vimrc:$HOME/.vimrc"
-  "$DOTFILES_DIR/git/.gitconfig:$HOME/.gitconfig"
-  "$DOTFILES_DIR/zsh/.zshrc:$HOME/.zshrc"
-  "$DOTFILES_DIR/zsh/.p10k.zsh:$HOME/.p10k.zsh"
-  "$DOTFILES_DIR/tmux/.tmux.conf:$HOME/.tmux.conf"
-)
+OS="$(uname -s)"
 
-echo "Symlinking dotfiles..."
+if [[ "$OS" == "Darwin" ]]; then
+  echo "🍏 Detected macOS"
+  bash "$DOTFILES_DIR/system/mac/setup.sh"
+elif [[ -f /etc/arch-release ]]; then
+  echo "🐧 Detected Arch Linux"
+  bash "$DOTFILES_DIR/system/arch/setup.sh"
+else
+  echo "❌ Unsupported OS: $OS"
+  exit 1
+fi
 
-for entry in "${DOTFILES[@]}"; do
-  IFS=":" read -r src dest <<< "$entry"
-
-  if [[ -e "$dest" && ! -L "$dest" ]]; then
-    echo "⚠️  Skipping $dest — already exists and is not a symlink"
-    continue
-  fi
-
-  # Remove existing symlink
-  if [[ -L "$dest" ]]; then
-    rm "$dest"
-  fi
-
-  ln -s "$src" "$dest"
-  echo "✅ Linked $dest → $src"
-done
-
-echo "📁 Moving scripts to ~/.local/bin..."
-
-# Ensure destination exists
-mkdir -p "$HOME/.local/bin"
-
-# Move and rename scripts (remove .sh extension)
-for script in "$DOTFILES_DIR/scripts/"*.sh; do
-  base=$(basename "$script" .sh)
-  dest="$HOME/.local/bin/$base"
-  echo "→ Installing $base"
-  cp "$script" "$dest"
-  chmod +x "$dest"
-done
-
-echo "Done! 🎉"

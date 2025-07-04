@@ -2,4 +2,4 @@
 brew "htop"
 brew "neovim"
 brew "ripgrep"
-
+brew "tmux"
