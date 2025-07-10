@@ -1,0 +1,30 @@
+# Languages/runtimes
+nodejs
+pnpm
+python
+go
+
+# Terminal/Shell
+tmux
+alacritty
+zsh
+
+# Dev tools
+git
+github-cli
+neovim
+
+spotify-launcher
+firefox
+
+# Build tools
+gcc
+make
+clang
+ninja
+
+# LSPs
+lua-language-server
+
+# Misc.
+ripgrep

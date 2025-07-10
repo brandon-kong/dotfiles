@@ -13,6 +13,22 @@ ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 echo "🔗 Stowing dotfiles..."
 bash "$DOTFILES_DIR/scripts/stow-all.sh"
 
+# Install packages
+echo "📦 Installing packages..."
+
+install_from_file() {
+  local file="$1"
+  [[ ! -f "$file" ]] && echo "⚠️ Package list not found: $file" && return 1
+
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    # Remove comments and whitespace
+    pkg="$(echo "$line" | sed 's/#.*//' | xargs)"
+    [[ -n "$pkg" ]] && echo "➤ $pkg" && sudo pacman -S --noconfirm --needed "$pkg"
+  done < "$file"
+}
+
+install_from_file "$DOTFILES_DIR/system/arch/pacman-packages.txt"
+
 # ------------------------------
 # 4. Install Oh My Zsh
 # ------------------------------
